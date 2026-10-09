@@ -125,7 +125,8 @@ function update(){
     const sh=`My final assessment is a performance rating of ${r?esc(r):'<span class="ph">[rating]</span>'}, with a training outcome of ${o?esc(o):'<span class="ph">[outcome]</span>'}.`;
     H.push(sh);T.push(`My final assessment is a performance rating of ${rt}, with a training outcome of ${ot}.`);
   } else H.push('<span class="ph">[6. Final Assessment]</span>');
-  opt(clean($('concl').value),'[Conclusion]');
+  opt(clean($('concl').value),'[Conclusion]' );
+  opt(clean($('ooc').value),'[OOC Notes]' );
   $('paper').innerHTML=H.join(' ');
   OUT=T.join(' ');
 }
