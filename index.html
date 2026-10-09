@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ProTech FTI Trainee Feedback Form</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0f12;--panel:#14181d;--panel2:#1a1f26;--line:#262d36;--text:#e6e9ed;--mute:#7d8896;--gold:#d4a73c;--gold2:#f0c75e;--steel:#8fa3b8;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 Inter,system-ui,sans-serif}
+header{padding:22px 24px 8px;max-width:1500px;margin:auto}
+header .tag{font:500 11px 'IBM Plex Mono',monospace;color:var(--gold);letter-spacing:.18em;text-transform:uppercase}
+header h1{margin:4px 0 2px;font:700 24px 'Space Grotesk',sans-serif}
+header p{margin:0;color:var(--mute)}
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;max-width:1500px;margin:auto;padding:14px 24px 40px}
+@media(max-width:980px){.wrap{grid-template-columns:1fr;padding:12px 14px 40px}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px}
+.sec{margin-bottom:16px}
+.sec h2{margin:0 0 2px;font:700 15px 'Space Grotesk',sans-serif;color:var(--gold2)}
+.sec .d{color:var(--mute);font-size:12.5px;margin:0 0 8px}
+label{display:block;font:500 11px 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--steel);margin:10px 0 4px}
+input,textarea,select{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:9px 11px;font:inherit;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--gold)}
+textarea{min-height:92px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.item{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:10px}
+.item .top{display:flex;justify-content:space-between;align-items:center}
+.item .top span{font:500 11px 'IBM Plex Mono',monospace;color:var(--gold)}
+button{font:600 13px Inter,sans-serif;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:8px 14px;cursor:pointer}
+button:hover{border-color:var(--gold)}
+.gold{background:var(--gold);color:#16120a;border-color:var(--gold)}
+.gold:hover{background:var(--gold2)}
+.mini{padding:3px 9px;font-size:12px;color:var(--mute)}
+hr.s{border:0;border-top:1px solid var(--line);margin:18px 0}
+.prev{position:sticky;top:12px;align-self:start;max-height:calc(100vh - 24px);display:flex;flex-direction:column}
+@media(max-width:980px){.prev{position:static;max-height:none}}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.bar .sp{flex:1}
+.tab.on{border-color:var(--gold);color:var(--gold2)}
+.paper{background:#050506;border:1px solid var(--line);border-radius:10px;padding:26px 28px;overflow:auto;flex:1;color:#dcdfe3;font:14px/1.6 Inter,sans-serif}
+.paper .c{text-align:center}
+.paper .t1{font:700 20px 'Space Grotesk',sans-serif;color:var(--gold2);letter-spacing:.06em}
+.paper .t2{font:600 13px 'Space Grotesk',sans-serif;letter-spacing:.12em;color:#fff}
+.paper hr{border:0;border-top:1px solid #2a2f36;margin:16px 0}
+.paper h3{margin:0 0 4px;font:700 15px 'Space Grotesk',sans-serif;color:#fff}
+.paper .g{font-style:italic;color:#8a919b;font-size:12.5px;margin-bottom:6px}
+.paper .tx{white-space:pre-wrap;margin:0 0 4px}
+.paper ul{margin:4px 0;padding-left:20px}
+.paper li{margin-bottom:4px;white-space:pre-wrap}
+.ph{color:#5d6672;font-style:italic}
+pre#bb{margin:0;white-space:pre-wrap;word-break:break-word;font:12.5px/1.6 'IBM Plex Mono',monospace;color:#cfd5dc;background:#050506;border:1px solid var(--line);border-radius:10px;padding:18px;overflow:auto;flex:1}
+.chk{display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--mute);margin:0}
+.chk input{width:auto}
+</style>
+</head>
+<body>
+<header>
+  <div class="tag">ProTech Security Solutions</div>
+  <h1>Trainee Feedback Form Generator</h1>
+  <p>Field Training Instructors: fill in the fields, watch the live preview, then copy the BBCode.</p>
+</header>
+
+<div class="wrap">
+  <div class="card" id="form">
+    <div class="sec">
+      <h2>Trainee Details</h2>
+      <div class="row">
+        <div><label>Trainee Name</label><input id="trainee" placeholder="Full Name"></div>
+        <div><label>Field Training Instructor</label><input id="fti" placeholder="Full Name"></div>
+      </div>
+      <label>Assignment / Training</label><input id="assign" placeholder="Assignment Name">
+      <div class="row">
+        <div><label>Date of Training</label><input id="date" type="date"></div>
+        <div><label>Training Stage</label><input id="stage" placeholder="Stage / Assignment Number"></div>
+      </div>
+    </div>
+    <hr class="s">
+    <div id="fb"></div>
+
+    <div class="sec">
+      <h2>5. Strengths</h2>
+      <p class="d">Identify the trainee's strongest qualities and the areas in which they demonstrated competency.</p>
+      <div id="strengths"></div>
+      <button type="button" onclick="addItem('strengths')">+ Add Strength</button>
+    </div>
+    <div class="sec">
+      <h2>6. Areas for Improvement</h2>
+      <p class="d">Identify any shortcomings, mistakes, or areas where the trainee requires additional instruction. Explain what needs to improve and how they can achieve it.</p>
+      <div id="areas"></div>
+      <button type="button" onclick="addItem('areas')">+ Add Area</button>
+    </div>
+
+    <div class="sec">
+      <h2>7. Instructor Recommendations</h2>
+      <p class="d">Specify whether they should progress to the next training stage, repeat the assignment, or receive additional guidance.</p>
+      <label>Recommendations</label>
+      <textarea id="reco" placeholder="Explain the recommended course of action and the reasoning behind it."></textarea>
+    </div>
+
+    <div class="sec">
+      <h2>8. Final Assessment</h2>
+      <div class="row">
+        <div><label>Performance Rating</label>
+          <select id="rating"><option value="">Select rating</option><option>Unsatisfactory</option><option>Needs Improvement</option><option>Satisfactory</option><option>Good</option><option>Excellent</option></select></div>
+        <div><label>Training Outcome</label>
+          <select id="outcome"><option value="">Select outcome</option><option>Passed</option><option>Requires Retraining</option><option>Pending Further Evaluation</option></select></div>
+      </div>
+      <label>Final Instructor Comments</label>
+      <textarea id="final" placeholder="Provide a concise but detailed conclusion summarizing the trainee's performance, readiness, and any conditions that must be met before progressing."></textarea>
+      <label>Instructor Signature</label>
+      <input id="sig" placeholder="Full Name / Rank">
+    </div>
+    <div class="bar">
+      <label class="chk"><input type="checkbox" id="guide"> Include section guidance text in output</label>
+      <span class="sp"></span>
+      <button type="button" onclick="resetAll()">Reset form</button>
+    </div>
+  </div>
+
+  <div class="card prev">
+    <div class="bar">
+      <button class="tab on" id="tp" type="button" onclick="setView('p')">Live Preview</button>
+      <button class="tab" id="tb" type="button" onclick="setView('b')">BBCode</button>
+      <span class="sp"></span>
+      <button class="gold" id="copy" type="button" onclick="copyBB()">Copy BBCode</button>
+    </div>
+    <div class="paper" id="paper"></div>
+    <pre id="bb" style="display:none"></pre>
+  </div>
+</div>
+
+<script>
+const SECS=[
+ {id:'s1',title:'1. Overall Performance',desc:"Provide a detailed overview of the trainee's performance throughout the training session. Explain how well they understood and executed their assigned duties.",lab:'Feedback',ph:"Write a professional assessment of the trainee's overall performance."},
+ {id:'s2',title:'2. Knowledge and Understanding',desc:"Assess the trainee's understanding of ProTech procedures, policies, and responsibilities relevant to the training.",lab:'Feedback',ph:'Explain what the trainee demonstrated an understanding of, as well as any areas requiring further clarification or improvement.'},
+ {id:'s3',title:'3. Practical Execution',desc:"Evaluate the trainee's ability to apply their knowledge in practical situations, including their decision-making, situational awareness, and adherence to established procedures.",lab:'Feedback',ph:'Provide specific examples of what the trainee performed correctly or incorrectly during the assignment.'},
+ {id:'s4',title:'4. Professionalism and Communication',desc:"Assess the trainee's conduct, communication, attitude, and ability to maintain professional standards throughout the assignment.",lab:'Feedback',ph:"Describe the trainee's professionalism, communication skills, and interactions during the training."}
+];
+const LISTS={
+ strengths:{label:'Strength',ph:'Description and supporting example.',items:['','']},
+ areas:{label:'Area',ph:'Issue observed, its impact, and recommended corrective action.',items:['','']}
+};
+const $=id=>document.getElementById(id);
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+let view='p';
+
+$('fb').innerHTML=SECS.map(s=>`<div class="sec"><h2>${s.title}</h2><p class="d">${s.desc}</p><label>Feedback</label><textarea id="${s.id}" placeholder="${s.ph}"></textarea></div>`).join('');
+
+function renderLists(){
+  for(const k in LISTS){
+    $(k).innerHTML=LISTS[k].items.map((v,i)=>`<div class="item"><div class="top"><span>${LISTS[k].label} ${i+1}</span>${LISTS[k].items.length>1?`<button class="mini" type="button" onclick="rmItem('${k}',${i})">Remove</button>`:''}</div><textarea data-k="${k}" data-i="${i}" placeholder="${LISTS[k].ph}" style="min-height:64px;margin-top:6px">${esc(v)}</textarea></div>`).join('');
+  }
+  document.querySelectorAll('textarea[data-k]').forEach(t=>t.addEventListener('input',e=>{LISTS[t.dataset.k].items[+t.dataset.i]=t.value;update()}));
+}
+function addItem(k){LISTS[k].items.push('');renderLists();update()}
+function rmItem(k,i){LISTS[k].items.splice(i,1);renderLists();update()}
+
+function fmtDate(v){if(!v)return'';const[y,m,d]=v.split('-');return `${d}/${m}/${y}`}
+
+function build(){
+  const H=[],B=[];
+  const showG=$('guide').checked;
+  const val=(id,ph)=>{const v=$(id).value.trim();return{v,h:v?esc(v):`<span class="ph">${esc(ph)}</span>`,b:v||`(${ph})`}};
+  const kv=(label,o)=>{H.push(`<div><b>${label}:</b> ${o.h}</div>`);B.push(`[b]${label}:[/b] ${o.b}`)};
+  const hr=()=>{H.push('<hr>');B.push('[hr][/hr]')};
+
+  H.push('<div class="c"><div class="t1">PROTECH SECURITY SOLUTIONS</div><div class="t2">FIELD TRAINING INSTRUCTOR — TRAINEE FEEDBACK FORM</div></div>');
+  B.push('[center][size=150][b]PROTECH SECURITY SOLUTIONS[/b][/size]\n[size=115][b]FIELD TRAINING INSTRUCTOR — TRAINEE FEEDBACK FORM[/b][/size][/center]');
+  hr();
+  kv('Trainee Name',val('trainee','Full Name'));
+  kv('Field Training Instructor',val('fti','Full Name'));
+  kv('Assignment/Training',val('assign','Assignment Name'));
+  const dt=fmtDate($('date').value);
+  kv('Date of Training',{h:dt||'<span class="ph">DD/MM/YYYY</span>',b:dt||'(DD/MM/YYYY)'});
+  kv('Training Stage',val('stage','Stage/Assignment Number'));
+  hr();
+
+  const sectionHead=(title,desc)=>{
+    H.push(`<h3>${title}</h3>`);B.push(`[size=115][b]${title}[/b][/size]`);
+    if(showG){H.push(`<div class="g">${esc(desc)}</div>`);B.push(`[i]${desc}[/i]`)}
+  };
+  const block=(label,o)=>{H.push(`<div><b>${label}:</b></div><div class="tx">${o.h}</div>`);B.push(`[b]${label}:[/b]\n${o.b}`)};
+
+  SECS.forEach(s=>{sectionHead(s.title,s.desc);block(s.lab,val(s.id,s.ph));hr()});
+
+  const list=(k,title,desc)=>{
+    sectionHead(title,desc);
+    const L=LISTS[k];
+    H.push('<ul>'+L.items.map((v,i)=>`<li><b>${L.label} ${i+1}:</b> ${v.trim()?esc(v.trim()):`<span class="ph">${esc(L.ph)}</span>`}</li>`).join('')+'</ul>');
+    B.push('[list]\n'+L.items.map((v,i)=>`[*][b]${L.label} ${i+1}:[/b] ${v.trim()||`(${L.ph})`}`).join('\n')+'\n[/list]');
+    hr();
+  };
+  list('strengths','5. Strengths',"Identify the trainee's strongest qualities and the areas in which they demonstrated competency.");
+  list('areas','6. Areas for Improvement','Identify any shortcomings, mistakes, or areas where the trainee requires additional instruction. Explain what needs to improve and how they can achieve it.');
+
+  sectionHead('7. Instructor Recommendations','Provide clear recommendations regarding the trainee\'s next steps. Specify whether they should progress to the next training stage, repeat the assignment, or receive additional guidance.');
+  block('Recommendations',val('reco','Explain the recommended course of action and the reasoning behind it.'));
+  hr();
+
+  sectionHead('8. Final Assessment','');
+  const r=$('rating').value,o=$('outcome').value;
+  kv('Performance Rating',{h:r?esc(r):'<span class="ph">Unsatisfactory / Needs Improvement / Satisfactory / Good / Excellent</span>',b:r||'(Select rating)'});
+  kv('Training Outcome',{h:o?esc(o):'<span class="ph">Passed / Requires Retraining / Pending Further Evaluation</span>',b:o||'(Select outcome)'});
+  block('Final Instructor Comments',val('final','Provide a concise but detailed conclusion summarizing the trainee\'s performance, readiness, and any conditions that must be met before progressing.'));
+  kv('Instructor Signature',val('sig','Full Name / Rank'));
+  return{html:H.join(''),bb:B.join('\n')};
+}
+let last='';
+function update(){const o=build();$('paper').innerHTML=o.html;$('bb').textContent=o.bb;last=o.bb}
+function setView(v){view=v;$('paper').style.display=v==='p'?'':'none';$('bb').style.display=v==='b'?'':'none';$('tp').classList.toggle('on',v==='p');$('tb').classList.toggle('on',v==='b')}
+async function copyBB(){
+  const btn=$('copy');
+  try{await navigator.clipboard.writeText(last)}
+  catch(e){const t=document.createElement('textarea');t.value=last;document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(_){}t.remove()}
+  btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy BBCode',1600);
+}
+function resetAll(){
+  if(!confirm('Clear every field in this form?'))return;
+  document.querySelectorAll('#form input:not([type=checkbox]),#form textarea,#form select').forEach(e=>e.value='');
+  LISTS.strengths.items=['',''];LISTS.areas.items=['',''];renderLists();update();
+}
+document.getElementById('form').addEventListener('input',update);
+document.getElementById('form').addEventListener('change',update);
+renderLists();update();
+</script>
+</body>
+</html>
