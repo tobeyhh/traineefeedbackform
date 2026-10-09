@@ -37,6 +37,8 @@ hr.s{border:0;border-top:1px solid var(--line);margin:18px 0}
 .prev h2{margin:0;font:700 15px 'Space Grotesk',sans-serif;color:var(--gold2)}
 .paper{white-space:pre-wrap;background:#050506;border:1px solid var(--line);border-radius:10px;padding:22px 24px;overflow:auto;flex:1;color:#dcdfe3;font:15px/1.75 Inter,sans-serif}
 .ph{color:#5d6672;font-style:italic}
+footer{max-width:1500px;margin:0 auto;padding:6px 24px 32px;color:var(--mute);font-size:12px;line-height:1.6;text-align:center}
+footer b{color:var(--steel);font-weight:600}
 </style>
 </head>
 <body>
@@ -61,7 +63,7 @@ hr.s{border:0;border-top:1px solid var(--line);margin:18px 0}
     <hr class="s">
     <div id="fields"></div>
     <div class="sec">
-      <h2>8. Final Assessment</h2>
+      <h2>6. Final Assessment</h2>
       <div class="row">
         <div><label>Performance Rating</label><select id="rating"><option value="">Select rating</option><option>Unsatisfactory</option><option>Needs Improvement</option><option>Satisfactory</option><option>Good</option><option>Excellent</option></select></div>
         <div><label>Training Outcome</label><select id="outcome"><option value="">Select outcome</option><option>Passed</option><option>Requires Retraining</option><option>Pending Further Evaluation</option></select></div>
@@ -81,15 +83,15 @@ hr.s{border:0;border-top:1px solid var(--line);margin:18px 0}
   </div>
 </div>
 
+<footer><b>ProTech Security Trainee Feedback Form</b> - This project is not affiliated with, nor an official product of GTA World or its official staff team. This is a private project made by a ProTech Faction Member, and is therefore not endorsed nor supported by GTA World or its official staff team.</footer>
+
 <script>
 const SECS=[
  ['s1','1. Overall Performance',"Overview of the trainee's performance throughout the session and how well they understood and executed their assigned duties.","Write a professional assessment of the trainee's overall performance."],
  ['s2','2. Knowledge and Understanding',"The trainee's understanding of ProTech procedures, policies, and responsibilities relevant to the training.","Explain what the trainee understood, and any areas needing clarification or improvement."],
  ['s3','3. Practical Execution',"Ability to apply knowledge in practice: decision-making, situational awareness, and adherence to procedures.","Give specific examples of what the trainee did correctly or incorrectly."],
  ['s4','4. Professionalism and Communication',"Conduct, communication, attitude, and professional standards throughout the assignment.","Describe the trainee's professionalism, communication, and interactions."],
- ['s5','5. Strengths',"The trainee's strongest qualities and the areas where they showed competency.","Describe the strengths with supporting examples."],
- ['s6','6. Areas for Improvement',"Shortcomings or areas needing more instruction, what needs to improve and how.","Describe the issues observed, their impact, and recommended corrective action."],
- ['s7','7. Instructor Recommendations',"Next steps: progress to the next stage, repeat the assignment, or receive additional guidance.","Explain the recommended course of action and the reasoning."]
+ ['s7','5. Instructor Recommendations',"Next steps: progress to the next stage, repeat the assignment, or receive additional guidance.","Explain the recommended course of action and the reasoning."]
 ];
 const $=id=>document.getElementById(id);
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -116,7 +118,7 @@ function update(){
     const rt=r||'[rating]',ot=o||'[outcome]';
     const sh=`My final assessment is a performance rating of ${r?esc(r):'<span class="ph">[rating]</span>'}, with a training outcome of ${o?esc(o):'<span class="ph">[outcome]</span>'}.`;
     H.push(sh);T.push(`My final assessment is a performance rating of ${rt}, with a training outcome of ${ot}.`);
-  } else H.push('<span class="ph">[8. Final Assessment]</span>');
+  } else H.push('<span class="ph">[6. Final Assessment]</span>');
   opt(clean($('concl').value),'[Conclusion]');
   $('paper').innerHTML=H.join(' ');
   OUT=T.join(' ');
