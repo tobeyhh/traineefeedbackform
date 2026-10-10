@@ -65,7 +65,7 @@ footer b{color:var(--steel);font-weight:600}
     <div class="sec">
       <h2>6. Final Assessment</h2>
       <div class="row">
-        <div><label>Performance Rating</label><select id="rating"><option value="">Select rating</option><option>Unsatisfactory</option><option>Needs Improvement</option><option>Satisfactory</option><option>Good</option><option>Excellent</option></select></div>
+        <div><label>Performance Rating</label><select id="rating"><option value="">Select rating</option><option>Unsatisfactory</option><option>Needs Improvement</option><option>Satisfactory</option></select></div>
         <div><label>Training Outcome</label><select id="outcome"><option value="">Select outcome</option><option>Passed</option><option>Requires Retraining</option><option>Pending Further Evaluation</option></select></div>
       </div>
     </div>
@@ -84,10 +84,20 @@ footer b{color:var(--steel);font-weight:600}
   </div>
 
   <div class="card prev">
-    <div class="bar"><h2>Live Preview</h2><span class="sp"></span><button class="gold" id="copy" type="button" onclick="copyOut()">Copy Paragraph</button></div>
+    <div class="bar"><h2>Live Preview</h2><span class="sp"></span><button class="gold" id="copy" type="button" onclick="copyOut()">Copy Response</button></div>
     <div class="paper" id="paper"></div>
+    <div>
+  </div>
+  <div class="card prev-title" style="font-size: 1.2em; font-weight: bold; margin-top: 10px; color: #d4a73c">Quick Tip<div style="font-size: 0.7em; color: #848383; margin-top: 5px; font-weight: normal">
+      Adjust the spacings yourself when posting the feedback on the Operations Network. The live preview will not reflect the exact formatting of the final post, so please ensure that you format it correctly before submission.
+    </div>
+  </div>
+<div class="card prev-title" style="font-size: 1.2em; font-weight: bold; margin-top: 10px; color: #d4a73c">Quick Links<div style="font-size: 0.7em; color: #848383; margin-top: 5px; font-weight: normal">
+    Once you have completed writing all the required information, reviewed the content for accuracy and completeness, and ensured that everything is properly organized and presented in a professional manner, proceed with submitting the finalized response through the designated Field Training Reports section on the ProTech Operations Network using the link provided: <a href="https://www.protechops.net/training/field-training-reports" target="_blank" style="color: #d4a73c; text-decoration: underline;">Field Training Reports</a>.
+    </div>
   </div>
 </div>
+
 
 <footer><b>ProTech Security Trainee Feedback Form</b> - This project is not affiliated with, nor an official product of GTA World or its official staff team. This is a private project made by a ProTech Faction Member, and is therefore not endorsed nor supported by GTA World or its official staff team.</footer>
 
@@ -122,7 +132,7 @@ function update(){
   const r=$('rating').value,o=$('outcome').value;
   if(r||o){
     const rt=r||'[rating]',ot=o||'[outcome]';
-    const sh=`My final assessment is a performance rating of ${r?esc(r):'<span class="ph">[rating]</span>'}, with a training outcome of ${o?esc(o):'<span class="ph">[outcome]</span>'}.`;
+    const sh=`Based on the trainee's overall performance, the final evaluation rating is ${r?esc(r):'<span class="ph">[rating]</span>'}, with a training outcome of ${o?esc(o):'<span class="ph">[outcome]</span>'}.`;
     H.push(sh);T.push(`My final assessment is a performance rating of ${rt}, with a training outcome of ${ot}.`);
   } else H.push('<span class="ph">[6. Final Assessment]</span>');
   opt(clean($('concl').value),'[Conclusion]' );
